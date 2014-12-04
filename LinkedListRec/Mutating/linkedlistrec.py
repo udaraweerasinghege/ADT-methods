@@ -24,3 +24,9 @@ class LinkedListRec:
         else:
             self.first = items[0]
             self.rest = LinkedListRec(items[1:])
+
+def convertlst(L):
+    if L.first is EmptyValue:
+        return []
+    else:
+        return [L.first] + convertlst(L.rest)
