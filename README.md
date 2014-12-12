@@ -1,7 +1,9 @@
 cs-revision
 ===========
 
-**** taking a break to study for 165 *** be back soon :)
+BACK!  Some of these functions are sloppily done since I just wrote down whatever came to me first...
+
+I pick helper functions over the probably more elegant while loops.
 
 
 Solutions to questions posted by David CSC-148 for review. 
