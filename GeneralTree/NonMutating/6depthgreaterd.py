@@ -1,14 +1,30 @@
 __author__ = 'Udara'
 from tree import Tree,EmptyValue
+#This is a cheap way to do this, im sure there is an easier way
+
+
+def depth_greater(T,d):
+    return size(T) - depthlessd(T , d-1)
 
 def depthlessd(T,d):
-    if d == 0:
+    if d== 0:
         return 1
     else:
         count = 1  #only difference from pervios exercise
         for trees in T.subtrees:
             count += depthlessd(trees,d-1)
         return count
+
+def size(T):
+    if T.root is EmptyValue:
+        return 0
+    else:
+        count = 1
+        for tree in T.subtrees:
+            count += size(tree)
+        return count
+
+
 
 
 
@@ -30,5 +46,4 @@ c.subtrees = [f,g]
 b.subtrees = [d,e]
 a.subtrees = [b,c]
 
-print(depthlessd(a,1))#3
-print(depthlessd(a,2))#7
+print(depth_greater(a,2))

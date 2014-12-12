@@ -1,5 +1,8 @@
 __author__ = 'Udara'
 from tree import Tree,EmptyValue
+#This is a cheap way to do this, im sure there is an easier way
+
+#this function finds nodes at depth < d
 
 def depth(T,d):
     """
