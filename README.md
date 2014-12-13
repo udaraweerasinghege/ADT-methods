@@ -13,3 +13,4 @@ I pick helper functions over the probably more elegant while loops.
 
 Let me know or send a pull request if you find mistakes! :)
 
+NOTE ::::: FOR DEPTH QUESTIONS I USE 0 AS ROOT not 1 ::::
