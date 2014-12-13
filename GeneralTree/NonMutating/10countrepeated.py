@@ -10,7 +10,10 @@ def count_dups1(T,seen):
     if T.root is EmptyValue:
         return 0
     elif T.root in seen:
-        return 1
+        count = 0
+        for tree in T.subtrees:
+            count += count_dups1(tree,seen)
+        return count
     else:
         seen.append(T.root)
         count = 0
