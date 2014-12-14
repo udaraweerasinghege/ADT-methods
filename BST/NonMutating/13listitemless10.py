@@ -4,21 +4,16 @@ from bst import BinarySearchTree, EmptyValue
 ##tree i use for testing http://puu.sh/dsvBN/dbe749f41d.png
 
 #assumes proper k value
-def find_kth_smallest(T,k):
-    left = size(T.left)
-    if left == k-1:
-        return T.root
-    elif left < k-1:
-        return find_kth_smallest(T.right,k-left-1)
-    else:
-        return find_kth_smallest(T.left,k)
-
-def size(T):
+def less_10(T):
     if T.is_empty():
-        return 0
+        return []
     else:
-        return 1 + size(T.left)  + size(T.right)
-
+        x=[]
+        if T.root <=10:
+            x.append(T.root)
+        x.extend(less_10(T.left))
+        x.extend(less_10(T.right))
+        return x
 
 a = BinarySearchTree(10)
 b = BinarySearchTree(5)
@@ -39,4 +34,4 @@ b.right = e
 c.left = f
 c.right = g
 
-print(find_kth_smallest(a,3))
+print(less_10(a))
