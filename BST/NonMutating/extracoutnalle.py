@@ -1,19 +1,22 @@
 __author__ = 'Udara'
+
 from bst import BinarySearchTree, EmptyValue
 ##tree i use for testing http://puu.sh/dsvBN/dbe749f41d.png
-
-#assumes none emtpy
-def remove_min(T):
-    if T.left.is_empty():
-        temp = T.root
-        t1L = T.right.left
-        t1R = T.right.right
-        T.root = T.right.root
-        T.left = t1L
-        T.right = t1R
-        return temp
+def count_all(T,item):
+    if T.is_empty():
+        return 0
+    elif T.root < item:
+        return count_all(T.right, item)
+    elif T.root > item:
+        return count_all(T.left,item)
     else:
-        return remove_min(T.left)
+        #return 1 + count_all(T.left, item)
+        n = 1
+        n+= count_all(T.left,item)
+        return n
+
+
+
 
 
 
@@ -36,6 +39,5 @@ b.right = e
 c.left = f
 c.right = g
 
-print(remove_min(a))
-print(c.root)
-print(c.right.root)
+g.left = BinarySearchTree(22)
+print(count_all(a,22))
