@@ -1,0 +1,6 @@
+from heap import Heap
+
+
+def size(h):
+    return len(h.items) - 1
+
